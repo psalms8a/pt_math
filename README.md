@@ -10,9 +10,19 @@ Use the provided setup script to create a Python virtual environment with CPU-on
 bash setup_ptmath_cpu.sh
 ```
 
-This creates a virtual environment named `ptmath` and installs PyTorch, torchvision, and torchaudio compiled for CPU. Activate the environment with:
+Activate the environment with:
 
 ```bash
 source ptmath/bin/activate
 ```
+
+## Measuring `torch.exp` accuracy
+
+Run the `measure_exp_accuracy.py` script inside the environment to compute the ULP error of `torch.exp` in float32 against a double precision reference:
+
+```bash
+python measure_exp_accuracy.py
+```
+
+The script prints summary statistics and saves the ULP errors to `exp_accuracy.csv`.
 
